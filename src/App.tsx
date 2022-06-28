@@ -9,10 +9,10 @@ import "./styles.css";
 import { makeProps, makeMin, makeMax } from "./helpers";
 
 export default function App() {
-  const { isOnScreen } = useScroll({ min: makeMin(3), max: makeMax(5) });
+  const { isOnScreen } = useScroll({ min: makeMin(3.5), max: makeMax(4.5) });
 
   return (
-    <Main animate={{ backgroundColor: isOnScreen ? "#000" : "#f96754" }}>
+    <Main animate={{ backgroundColor: isOnScreen ? "#7990ed" : "#003a70" }}>
       <ScrollRenderer {...makeProps(0)}>
         <P>Hey SpaceX, my name is Ilyass Ben Hakim</P>
       </ScrollRenderer>
@@ -27,8 +27,9 @@ export default function App() {
       </ScrollRenderer>
       <ScrollRenderer {...makeProps(3.5)}>
         <Stack space={1}>
-          <P direction="left">So let's see</P>
-          <H1>What i can do?</H1>
+          <P>So let's see</P>
+          <P>How Stack Works</P>
+          {/* <H1>What i can do?</H1> */}
         </Stack>
       </ScrollRenderer>
       <ScrollRenderer {...makeProps(5)}>
@@ -41,19 +42,19 @@ export default function App() {
 const P = styled.p`
   margin: 0 auto;
   color: #fff;
-  text-align: ${({ direction }: { direction: "center" | "left" | "right" }) =>
-    direction};
-  max-width: 400px;
-  line-height: 1.2rem;
+  max-width: 50%;
+  line-height: 1.2em;
 `;
 const H1 = styled.h1`
-  font-size: 3.4rem;
+  font-size: 3.4em;
   color: #fff;
-  line-height: 3.8rem;
+  line-height: 3.8em;
 `;
 const Main = styled(motion.div)`
+  align-content: center;
   font-family: sans-serif;
   text-align: center;
   height: 16000px;
-  background-color: #f96754;
+  width: 100%;
+  background-color: #003a70;
 `;
